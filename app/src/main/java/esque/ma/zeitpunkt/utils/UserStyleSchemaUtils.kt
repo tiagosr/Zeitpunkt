@@ -28,6 +28,8 @@ fun createUserStyleSchema(context: Context): UserStyleSchema {
         )
 
     return UserStyleSchema(
-        listOf(colorStyleSetting)
+        listOf(
+            colorStyleSetting
+        )
     )
 }

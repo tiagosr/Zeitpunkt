@@ -1,11 +1,11 @@
 package esque.ma.zeitpunkt
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
+import android.content.res.Resources
+import android.graphics.*
 import android.view.SurfaceHolder
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.content.res.ResourcesCompat.getFont
 import androidx.wear.watchface.ComplicationSlotsManager
 import androidx.wear.watchface.Renderer
 import androidx.wear.watchface.WatchState
@@ -33,6 +33,7 @@ class ZeitpunktWatchCanvasRenderer(
 ) {
     private lateinit var mHoursPaint: Paint
     private lateinit var mMinutesPaint: Paint
+    private lateinit var mTypeface: Typeface
     private val backgroundColor: Int = Color.BLACK
 
     class ZeitpunktSharedAssets: SharedAssets {
@@ -47,11 +48,13 @@ class ZeitpunktWatchCanvasRenderer(
     override suspend fun init() {
         super.init()
 
+        mTypeface = Typeface.DEFAULT_BOLD
         mMinutesPaint = Paint().apply {
             color = Color.WHITE
             isAntiAlias = true
             strokeCap = Paint.Cap.ROUND
             textSize = 60f
+            typeface = mTypeface
         }
 
         mHoursPaint = Paint().apply {
@@ -59,6 +62,7 @@ class ZeitpunktWatchCanvasRenderer(
             isAntiAlias = true
             strokeCap = Paint.Cap.ROUND
             textSize = 60f
+            typeface = mTypeface
         }
     }
 
