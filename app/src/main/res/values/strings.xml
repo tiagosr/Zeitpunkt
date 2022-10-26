@@ -2,4 +2,8 @@
     <string name="app_name">Zeitpunkt</string>
     <string name="message">Watch face tapped</string>
     <string name="my_analog_name">Zeitpunkt</string>
+    <string name="colors_style_setting">Colors</string>
+    <string name="colors_style_setting_description">Watchface colorization</string>
+
+    <string name="red_style_name">Red</string>
 </resources>

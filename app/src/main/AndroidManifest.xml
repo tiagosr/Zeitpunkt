@@ -21,7 +21,7 @@
             android:value="true" />
 
         <service
-            android:name=".MyWatchFace"
+            android:name=".ZeitpunktWatchFace"
             android:exported="true"
             android:label="@string/my_analog_name"
             android:permission="android.permission.BIND_WALLPAPER">
