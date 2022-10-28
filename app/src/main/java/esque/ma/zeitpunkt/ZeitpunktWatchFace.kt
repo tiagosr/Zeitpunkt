@@ -11,16 +11,6 @@ import esque.ma.zeitpunkt.utils.createComplicationSlotManager
 import esque.ma.zeitpunkt.utils.createUserStyleSchema
 
 
-data class FaceText(
-    val line_0: String,
-    val highlight_0: Boolean = true,
-    val line_1: String = "",
-    val highlight_1: Boolean = false,
-    val line_2: String = "",
-    val highlight_2: Boolean = false
-) {
-}
-
 class ZeitpunktWatchFace : WatchFaceService() {
 
     override fun createUserStyleSchema(): UserStyleSchema =

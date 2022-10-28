@@ -23,6 +23,7 @@ sealed class ComplicationConfig(val id:Int, val supportedTypes: List<Complicatio
     object Top: ComplicationConfig(
         TOP_COMPLICATION_ID,
         listOf(
+            ComplicationType.NOT_CONFIGURED,
             ComplicationType.RANGED_VALUE,
             ComplicationType.MONOCHROMATIC_IMAGE,
             ComplicationType.SHORT_TEXT,
@@ -51,8 +52,8 @@ fun createComplicationSlotManager(
         canvasComplicationFactory = defaultCanvasComplicationFactory,
         supportedTypes = ComplicationConfig.Top.supportedTypes,
         defaultDataSourcePolicy = DefaultComplicationDataSourcePolicy(
-            SystemDataSources.DATA_SOURCE_DAY_AND_DATE,
-            ComplicationType.SHORT_TEXT
+            SystemDataSources.NO_DATA_SOURCE,
+            ComplicationType.NOT_CONFIGURED
         ),
         bounds = ComplicationSlotBounds(
             ComplicationConfig.Top.rectSlot
